@@ -1,0 +1,9 @@
+name: euclidean-canvas
+description: Minimal HTML canvas setup to draw a centered circle
+entry: index.html
+notes:
+  - Build: none
+  - Serve: open index.html in a browser
+
+
+

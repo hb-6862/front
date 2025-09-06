@@ -1,0 +1,54 @@
+# Node & frontend tooling
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories
+bower_components/
+
+# Build outputs
+dist/
+build/
+.next/
+.nuxt/
+out/
+.cache/
+.vite/
+coverage/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS & editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.log
+*.orig
+
+# IDEs
+.idea/
+.vscode/
+*.code-workspace
+
+# Misc
+*.local
+*.bak
+*.cache/**
+
+# Python (if used)
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Logs
+logs/
+*.log
+*.log.*
+

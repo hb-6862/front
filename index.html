@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Euclidean Canvas — Circle</title>
+    <style>
+      html, body { height: 100%; margin: 0; }
+      body { display: grid; place-items: center; background: #0f172a; color: #e2e8f0; }
+      .stage { display: grid; place-items: center; }
+      canvas { background: #0b1022; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+      .caption { text-align: center; margin-top: 12px; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; font-size: 14px; opacity: 0.8; }
+    </style>
+  </head>
+  <body>
+    <main class="stage">
+      <canvas id="canvas" width="800" height="800" aria-label="Circle on canvas"></canvas>
+    </main>
+    <script>
+      (function() {
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const width = canvas.width;
+        const height = canvas.height;
+
+        // Clear
+        ctx.clearRect(0, 0, width, height);
+
+        // Circle parameters
+        const centerX = width / 2;
+        const centerY = height / 2;
+        // Define base radii per your spec
+        const radiusEdge = Math.min(width, height) / 2; // 400 on 800x800
+        const radius150 = radiusEdge;                    // 150%
+        const radius110 = radiusEdge * (110 / 150);      // ≈ 293.333
+        const radius100 = radiusEdge * (100 / 150);      // ≈ 266.666
+        const radius12  = radius100 * 0.12;              // ≈ 32
+        const strokeInset = ctx.lineWidth / 2;           // keep strokes fully visible
+
+        // Style
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = '#60a5fa';
+        ctx.fillStyle = 'rgba(96, 165, 250, 0.15)';
+
+        // Draw 150% (slightly inset to avoid stroke clipping)
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius150 - strokeInset, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Draw 110%
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius110, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Draw 100%
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius100, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Draw 12%
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius12, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Center point (optional)
+        ctx.fillStyle = '#fca5a5';
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, 3, 0, Math.PI * 2);
+        ctx.fill();
+      })();
+    </script>
+  </body>
+  </html>
+
+
